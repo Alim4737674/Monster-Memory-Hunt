@@ -42,7 +42,7 @@
       btn.disabled = true;
     });
 
-    addLog(win ? '🎉 Du hast alle Felder aufgedeckt!' : '💀 Keine Leben mehr. Spiel vorbei!');
+    addLog(win ? '🎉 Du hast alle Felder aufgedeckt!' : 'Keine Leben mehr. Spiel vorbei!');
     updateHud();
   }
 
@@ -59,15 +59,15 @@
       }
       case 'treasure':
         state.score += field.value;
-        addLog(`💰 Schatz gefunden: +${field.value} Punkte.`);
+        addLog(`Schatz gefunden: +${field.value} Punkte.`);
         break;
       case 'potion':
         state.life = Math.min(100, state.life + field.value);
-        addLog(`🧪 Trank genutzt: +${field.value} Leben.`);
+        addLog(`Trank genutzt: +${field.value} Leben.`);
         break;
       case 'trap':
         state.life = Math.max(0, state.life - field.value);
-        addLog(`⚠️ Falle aktiviert: -${field.value} Leben.`);
+        addLog(`Falle aktiviert: -${field.value} Leben.`);
         break;
       default:
         addLog('Unbekanntes Event.');
@@ -162,7 +162,7 @@
     } catch (error) {
       state.gameOver = true;
       statusEl.textContent = 'Fehler';
-      addLog(`❌ Konnte Level nicht laden: ${error.message}`);
+      addLog(`Konnte Level nicht laden: ${error.message}`);
     }
   }
 
